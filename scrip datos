@@ -1,0 +1,163 @@
+/*POSTGREST -- SQLSERVER*/
+create table CLIENTES (
+   IDCLIENTE            int                  not null,
+   NOMBRES_CLIENTE       varchar(50)          null,
+   APELLIDOS_CLIENTE     varchar(50)          null,
+   IDENTIFICACION_CLIENTE varchar(20)          null,
+   GENERO               varchar(20)          null,
+   TELEFONOCONVENCIONAL varchar(50)          null,
+   TELEFONOMOVIL        varchar(50)          null,
+   EMAIL_CLIENTE         varchar(30)          null,
+   TIPO_LICENCIA	 varchar(4)           null,
+   CUENTA_SEGUROMEDICO   varchar(10)      null,
+   constraint PK_CLIENTE primary key (IDCLIENTE)
+)
+go
+
+
+/==============================================================/
+/* Table: AlquilerAuto                                                */
+/==============================================================/
+create table AlquilerAuto (
+   IDAUTO             int                  not null,
+   IDCLIENTE            int                  not null,
+   DESCRIPCIONAUTO    varchar(10)              null,
+   PRECIO_AUTO        	int          null,
+   PLACA_AUTO         varchar(10)          null,
+   SALIDA_AUTO		DATE		    not null,
+   ENTREGA_AUTO		DATE		    not null,
+   FORMA_PAGO           varchar(20)          null,
+constraint PK_ALQUILERVEHICULO primary key (IDAUTO, IDCLIENTE)
+)
+
+/==============================================================/
+/* Table: Auto                                                */
+/==============================================================/
+create table Auto (
+   IDAUTO             int                  not null,
+   DESCRIPCIONAUTO    varchar(10)              null,
+   PRECIO_AUTO        int          null,
+   PLACA_AUTO         varchar(10)          null,
+   DISPONIBLES_AUTO        int                  not null,
+   UBICACION_AUTO     varchar(20)          null,
+   ESTADO_AUTO	      varchar(20)          null,
+   constraint PK_Alquiler primary key  (IDAUTO)
+)
+
+
+create table MARCA (
+   IDMARCA             int                  not null,
+   DESCRIPCION_MARCA    varchar(20)              null,
+   constraint PK_MARCA primary key  (IDMARCA)
+)
+
+insert into AlquilerAuto values
+(1,2,'AUTO',60,'ESRW-8485','2020/08/12','2020/08/12','EFECTIVO/CREDITO'),
+(2,3,'FULGONETA',100,'EPFW-1478','2020/08/12','2020/08/12','EFECTIVO/CREDITO'),
+(3,4,'CAMIONETA',80,'HDMI-4556','2020/08/12','2020/08/12','EFECTIVO/CREDITO');
+
+insert into CLIENTES values
+(1,'Michael','Peñafiel','1315330488','Masculino','0995301311','0995301211','alex.maikp@gmail.com','B','0'),
+(2,'Jeremy','Peñafiel','1235648482','Masculino','0995301311','0995301211','jeremyadad@gmail.com','B','0'),
+(3,'Lorena','Reyes','1384884555','Femenino','0995301311','0995301211','jojocaramelo@gmail.com','B','0'),
+(4,'Luis','Qijije','1306324578','Femenino','0995301311','0995301211','luis.cesar@gmail.com','B','0'),
+(5,'Jean Pierre','Peñafiel','1402684002','Masculino','0995301311','0995301211','jean.asdasd@gmail.com','B','0');
+
+insert into AUTO values
+(1,'AUTO','60','ESRW-8485',10,'A1','Mantenimiento'),
+(2,'FULGONETA','100','EPFW-1478',12,'F1','Disponible'),
+(3,'CAMIONETA','80','HDMI-4556',13,'C1','Disponible'),
+(4,'AUTO','60','QJWW-1478',10,'A2','Disponible'),
+(5,'AUTO','60','LAPW-6987',10,'A3','Disponible'),
+(6,'CAMIONETA','80','ELEW-1157',13,'F2','Mantenimiento');
+
+
+insert into MARCA values
+(1,'Chevrolet'),
+(2,'Nissan'),
+(3,'Hiundai'),
+(4,'Mazda');
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////
+/*ORACLE*/
+create table CLIENTES (
+   IDCLIENTE            int                  not null,
+   NOMBRES_CLIENTE       varchar(50)          null,
+   APELLIDOS_CLIENTE     varchar(50)          null,
+   IDENTIFICACION_CLIENTE varchar(20)          null,
+   GENERO               varchar(20)          null,
+   TELEFONOCONVENCIONAL varchar(50)          null,
+   TELEFONOMOVIL        varchar(50)          null,
+   EMAIL_CLIENTE         varchar(30)          null,
+   TIPO_LICENCIA	 varchar(4)           null,
+   CUENTA_SEGUROMEDICO   varchar(10)      null,
+   constraint PK_CLIENTE primary key (IDCLIENTE)
+)
+go
+
+
+/==============================================================/
+/* Table: AlquilerAuto                                                */
+/==============================================================/
+create table AlquilerAuto (
+   IDAUTO             int                  not null,
+   IDCLIENTE            int                  not null,
+   DESCRIPCIONAUTO    varchar(10)              null,
+   PRECIO_AUTO        	int          null,
+   PLACA_AUTO         varchar(10)          null,
+   SALIDA_AUTO		DATE		    not null,
+   ENTREGA_AUTO		DATE		    not null,
+   FORMA_PAGO           varchar(20)          null,
+constraint PK_ALQUILERVEHICULO primary key (IDAUTO, IDCLIENTE)
+)
+
+/==============================================================/
+/* Table: Auto                                                */
+/==============================================================/
+create table Auto (
+   IDAUTO             int                  not null,
+   DESCRIPCIONAUTO    varchar(10)              null,
+   PRECIO_AUTO        int          null,
+   PLACA_AUTO         varchar(10)          null,
+   DISPONIBLES_AUTO        int                  not null,
+   UBICACION_AUTO     varchar(20)          null,
+   ESTADO_AUTO	      varchar(20)          null,
+   constraint PK_Alquiler primary key  (IDAUTO)
+)
+
+
+create table MARCA (
+   IDMARCA             int                  not null,
+   DESCRIPCION_MARCA    varchar(20)              null,
+   constraint PK_MARCA primary key  (IDMARCA)
+)
+
+insert into AlquilerAuto values
+(1,2,'AUTO',60,'ESRW-8485','12/08/2020','13/08/2020','EFECTIVO/CREDITO'),
+(2,3,'FULGONETA',100,'EPFW-1478','12/08/2020','13/08/2020','EFECTIVO/CREDITO'),
+(3,4,'CAMIONETA',80,'HDMI-4556','12/08/2020','13/08/2020','EFECTIVO/CREDITO');
+
+insert into CLIENTES values
+(1,'Michael','Peñafiel','1315330488','Masculino','0995301311','0995301211','alex.maikp@gmail.com','B','0'),
+(2,'Jeremy','Peñafiel','1235648482','Masculino','0995301311','0995301211','jeremyadad@gmail.com','B','0'),
+(3,'Lorena','Reyes','1384884555','Femenino','0995301311','0995301211','jojocaramelo@gmail.com','B','0'),
+(4,'Luis','Qijije','1306324578','Femenino','0995301311','0995301211','luis.cesar@gmail.com','B','0'),
+(5,'Jean Pierre','Peñafiel','1402684002','Masculino','0995301311','0995301211','jean.asdasd@gmail.com','B','0');
+
+insert into AUTO values
+(1,'AUTO','60','ESRW-8485',10,'A1','Mantenimiento'),
+(2,'FULGONETA','100','EPFW-1478',12,'F1','Disponible'),
+(3,'CAMIONETA','80','HDMI-4556',13,'C1','Disponible'),
+(4,'AUTO','60','QJWW-1478',10,'A2','Disponible'),
+(5,'AUTO','60','LAPW-6987',10,'A3','Disponible'),
+(6,'CAMIONETA','80','ELEW-1157',13,'F2','Mantenimiento');
+
+insert into MARCA values
+(1,'Chevrolet'),
+(2,'Nissan'),
+(3,'Hiundai'),
+(4,'Mazda');
