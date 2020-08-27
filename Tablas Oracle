@@ -1,0 +1,51 @@
+create table CLIENTES (
+   IDCLIENTE            int                  not null,
+   NOMBRES_CLIENTE       varchar(50)          null,
+   APELLIDOS_CLIENTE     varchar(50)          null,
+   IDENTIFICACION_CLIENTE varchar(20)          null,
+   GENERO               varchar(20)          null,
+   TELEFONOCONVENCIONAL varchar(50)          null,
+   TELEFONOMOVIL        varchar(50)          null,
+   EMAIL_CLIENTE         varchar(30)          null,
+   TIPO_LICENCIA	 varchar(4)           null,
+   CUENTA_SEGUROMEDICO   varchar(10)      null,
+   constraint PK_CLIENTE primary key (IDCLIENTE)
+)
+go
+
+
+/==============================================================/
+/* Table: AlquilerAuto                                                */
+/==============================================================/
+create table AlquilerAuto (
+   IDAUTO             int                  not null,
+   IDCLIENTE            int                  not null,
+   DESCRIPCIONAUTO    varchar(10)              null,
+   PRECIO_AUTO        	int          null,
+   PLACA_AUTO         varchar(10)          null,
+   SALIDA_AUTO		DATE		    not null,
+   ENTREGA_AUTO		DATE		    not null,
+   FORMA_PAGO           varchar(20)          null,
+constraint PK_ALQUILERVEHICULO primary key (IDAUTO, IDCLIENTE)
+)
+
+/==============================================================/
+/* Table: Auto                                                */
+/==============================================================/
+create table Auto (
+   IDAUTO             int                  not null,
+   DESCRIPCIONAUTO    varchar(10)              null,
+   PRECIO_AUTO        int          null,
+   PLACA_AUTO         varchar(10)          null,
+   DISPONIBLES_AUTO        int                  not null,
+   UBICACION_AUTO     varchar(20)          null,
+   ESTADO_AUTO	      varchar(20)          null,
+   constraint PK_Alquiler primary key  (IDAUTO)
+)
+
+
+create table MARCA (
+   IDMARCA             int                  not null,
+   DESCRIPCION_MARCA    varchar(20)              null,
+   constraint PK_MARCA primary key  (IDMARCA)
+)
